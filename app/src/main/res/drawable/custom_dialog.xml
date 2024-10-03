@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Focused and Enabled State -->
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#E0F7FA"/> <!-- Light cyan background -->
+            <corners android:radius="16dp"/> <!-- Larger corner radius for smoothness -->
+            <stroke android:color="#00796B" android:width="3dp"/> <!-- Teal border for focus -->
+            <padding android:left="16dp" android:right="16dp" android:top="12dp" android:bottom="12dp"/> <!-- Padding for spacing -->
+        </shape>
+    </item>
+
+    <!-- Enabled State -->
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#939AD8"/> <!-- White background -->
+            <corners android:radius="46dp"/>
+            <stroke android:color="#1E2671" android:width="4dp"/> <!-- Darker teal border -->
+
+<!--            <padding android:left="16dp" android:right="16dp" android:top="12dp" android:bottom="12dp"/>-->
+        </shape>
+    </item>
+
+    <!-- Default State -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F5F5F5"/> <!-- Light gray background for inactive state -->
+            <corners android:radius="16dp"/>
+            <stroke android:color="#BDBDBD" android:width="2dp"/> <!-- Light gray border -->
+            <padding android:left="16dp" android:right="16dp" android:top="12dp" android:bottom="12dp"/>
+        </shape>
+    </item>
+</selector>

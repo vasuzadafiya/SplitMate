@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".welcome"
+    android:background="@drawable/leaf">
+
+    <ViewSwitcher
+
+        android:id="@+id/viewSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <!-- First welcome layout -->
+
+        <!-- Second welcome layout -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/welcome_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="340dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="463dp"
+                android:gravity="center"
+                android:text="@string/welcome_to_splitmate"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/welcome_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="340dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="463dp"
+                android:gravity="center"
+                android:text="Easy Splits, Happy Lives!"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </ViewSwitcher>
+</RelativeLayout>

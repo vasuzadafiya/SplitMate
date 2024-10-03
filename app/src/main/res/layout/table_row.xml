@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="8dp"
+    android:layout_marginBottom="4dp"
+    android:layout_height="50dp"
+    android:layout_width="match_parent"
+    android:background="@drawable/custom_button">
+
+
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/payment_method_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="14sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/category_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="14sp"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/amount_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+</TableRow>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Focused and Enabled State -->
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFDFD6"/> <!-- Light pink background -->
+            <corners android:radius="12dp"/> <!-- Slightly larger corner radius for smoothness -->
+            <stroke android:color="#DD761C" android:width="3dp"/> <!-- Darker border for focus -->
+            <padding android:left="12dp" android:right="12dp" android:top="10dp" android:bottom="10dp"/> <!-- Padding to create some space -->
+        </shape>
+    </item>
+
+    <!-- Enabled State -->
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/> <!-- White background -->
+            <corners android:radius="12dp"/>
+            <stroke android:color="#1A5319" android:width="2dp"/> <!-- Slightly softer border color -->
+            <shadowColor android:color="#80000000"/> <!-- Subtle shadow to give a floating effect -->
+            <padding android:left="12dp" android:right="12dp" android:top="10dp" android:bottom="10dp"/>
+        </shape>
+    </item>
+
+    <!-- Default State -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/>
+            <corners android:radius="12dp"/>
+            <stroke android:color="#D3D3D3" android:width="2dp"/> <!-- Light gray for inactive state -->
+            <padding android:left="12dp" android:right="12dp" android:top="10dp" android:bottom="10dp"/>
+        </shape>
+    </item>
+</selector>

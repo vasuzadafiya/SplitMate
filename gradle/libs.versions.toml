@@ -1,0 +1,65 @@
+[versions]
+agp = "8.6.1"
+cardview = "1.0.0"
+coreSplashscreen = "1.0.1"
+firebaseBom = "33.1.2"
+itext7Core = "7.2.7"
+itext7CoreVersion = "7.2.3"
+itextpdfKernel = "7.2.7"
+itextpdfLayout = "7.2.7"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+kernel = "7.2.5"
+kernelVersion = "7.2.7"
+layout = "7.2.5"
+layoutVersion = "7.2.7"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+googleGmsGoogleServices = "4.4.2"
+firebaseAuth = "23.0.0"
+firebaseFirestore = "25.0.0"
+firebasePerf = "21.0.1"
+googleFirebaseFirebasePerf = "1.4.2"
+firebaseAnalytics = "22.0.2"
+mpandroidchart = "v3.1.0"
+firebaseCrashlytics = "19.0.3"
+googleFirebaseCrashlytics = "3.0.2"
+
+[libraries]
+cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-database = { module = "com.google.firebase:firebase-database" }
+firebase-storage = { module = "com.google.firebase:firebase-storage" }
+google-firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+itext7-core-v727 = { module = "com.itextpdf:itext7-core", version.ref = "itext7Core" }
+itextpdf-itext7-core = { module = "com.itextpdf:itext7-core", version.ref = "itext7CoreVersion" }
+itextpdf-kernel = { module = "com.itextpdf.kernel:kernel", version.ref = "itextpdfKernel" }
+itextpdf-layout = { module = "com.itextpdf.layout:layout", version.ref = "itextpdfLayout" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kernel = { module = "com.itextpdf:kernel", version.ref = "kernel" }
+kernel-v727 = { module = "com.itextpdf:kernel", version.ref = "kernelVersion" }
+layout = { module = "com.itextpdf:layout", version.ref = "layout" }
+layout-v727 = { module = "com.itextpdf:layout", version.ref = "layoutVersion" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+google-firebase-firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "googleFirebaseFirebasePerf" }
+google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleFirebaseCrashlytics" }
+

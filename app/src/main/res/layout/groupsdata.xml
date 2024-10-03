@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#987D9A"
+    tools:context=".groupdata">
+
+    <TextView
+        android:id="@+id/tvheadgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="Group Details"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewGroupDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewGroupDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="#BB9AB1"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/white"
+                    android:indeterminateTintMode="src_in"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/datanotfoundimg"
+                    android:layout_width="223dp"
+                    android:layout_height="243dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/nodatafound"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtimgntfnd"
+                    android:layout_width="184dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="begin your journey"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic"
+                    android:visibility="gone" />
+
+
+                <ListView
+                    android:id="@+id/groupdisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="10dp"
+                    android:padding="8dp"
+                    android:scrollbarSize="0dp"
+                    android:textAlignment="center"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/CreateGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#EECEB9"
+        android:gravity="center"
+        android:text="Create new Group"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewGroupDisplay" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

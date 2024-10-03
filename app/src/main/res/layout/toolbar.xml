@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#9CA4DD">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9CA4DD"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/splitmate"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/greetingmsg"
+            android:layout_width="143dp"
+            android:layout_height="28dp"
+            android:layout_below="@+id/title"
+            android:text="greeting message"
+            android:gravity="top"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+
+        <ImageButton
+            android:id="@+id/logout"
+            android:layout_width="54dp"
+            android:layout_height="57dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:background="#9CA4DD"
+            android:src="@drawable/ic_logout"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

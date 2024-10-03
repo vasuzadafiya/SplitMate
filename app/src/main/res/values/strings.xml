@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SplitMate</string>
+    <string name="SplitMate" />
+    <string name="splitmate">SplitMate</string>
+    <string name="username">\n</string>
+    <string name="phlogin"><u>Login with Phone Number</u></string>
+    <string name="emlogin"><u>Login with Email</u></string>
+    <string name="createac"><u>Create New Account</u></string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="register_account">Register Account</string>
+    <string name="welcome_to_splitmate">Welcome To SplitMate!</string>
+    <string name="personal_expenses">Personal Expenses</string>
+
+
+    <!-- Payment Methods -->
+    <string-array name="payment_methods">
+        <item>Select Payment Method   👇🏻 </item>
+        <item>Cash</item>
+        <item>Online</item>
+        <item>Other</item>
+
+
+    </string-array>
+</resources>

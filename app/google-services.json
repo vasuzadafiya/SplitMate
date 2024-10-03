@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "254078443355",
+    "firebase_url": "https://splitmate-7605-default-rtdb.firebaseio.com",
+    "project_id": "splitmate-7605",
+    "storage_bucket": "splitmate-7605.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254078443355:android:51977ba06da9842070c47e",
+        "android_client_info": {
+          "package_name": "com.example.splitpal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254078443355-o3rfap54lstuhsc3ef31uvb7j6c7fpi8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe7MUHZNqco19XsRY0wF3zFgY1A7xiQWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254078443355-o3rfap54lstuhsc3ef31uvb7j6c7fpi8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,164 @@
+ <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9CA4DD"
+    tools:context=".welcome">
+
+    <!-- Toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+     <TextView
+         android:id="@+id/tvheadexp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="8dp"
+         android:fontFamily="sans-serif-smallcaps"
+         android:gravity="center"
+         android:text="@string/personal_expenses"
+         android:textColor="@color/black"
+         android:textSize="30sp"
+         android:textStyle="bold"
+         android:visibility="visible"
+         app:layout_constraintBottom_toTopOf="@+id/cardViewScrollView"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.496"
+         app:layout_constraintStart_toStartOf="parent" />
+
+     <androidx.cardview.widget.CardView
+         android:id="@+id/cardViewScrollView"
+         android:layout_width="365dp"
+         android:layout_height="555dp"
+         android:layout_margin="16dp"
+         android:layout_marginTop="48dp"
+         app:cardBackgroundColor="#6570C5"
+         app:cardCornerRadius="22dp"
+         app:cardElevation="2dp"
+         app:layout_constraintBottom_toTopOf="@+id/addexpense"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.704">
+
+         <ScrollView
+             android:id="@+id/scrollView"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="8dp"
+             android:layout_marginTop="10dp"
+             android:visibility="visible">
+
+             <LinearLayout
+                 android:id="@+id/dispdata"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical">
+
+                 <ImageView
+                     android:id="@+id/datanotfoundimg"
+                     android:layout_width="241dp"
+                     android:layout_height="305dp"
+                     android:layout_gravity="center"
+                     android:layout_marginTop="50dp"
+                     android:src="@drawable/nodatafound"
+                     android:visibility="gone" />
+
+                 <TextView
+                     android:id="@+id/txtimgntfnd"
+                     android:layout_width="184dp"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:fontFamily="casual"
+                     android:gravity="center"
+                     android:text="begin your journey"
+                     android:textColor="@color/black"
+                     android:textSize="20sp"
+                     android:textStyle="bold|italic"
+                     android:visibility="gone" />
+
+                 <ProgressBar
+                     android:id="@+id/progressbar"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:indeterminateTint="@color/coral"
+                     android:indeterminateTintMode="src_in"
+                     android:minWidth="50dp"
+                     android:minHeight="50dp"
+                     android:visibility="visible" />
+
+
+                 <TableLayout
+                     android:id="@+id/tableLayout"
+                     android:layout_width="match_parent"
+                     android:layout_marginTop="3dp"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="10dp"
+                     android:stretchColumns="1"
+                     android:visibility="visible">
+                     <!-- Table rows will be added dynamically in code -->
+                 </TableLayout>
+
+                 <TextView
+                     android:id="@+id/totalAmountTextView"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="44dp"
+                     android:gravity="center"
+                     android:text=""
+                     android:textColor="#000000"
+                     android:textSize="32sp"
+                     android:textStyle="bold"
+                     android:visibility="visible"
+                     app:layout_constraintBottom_toTopOf="@+id/main"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.0"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/cardViewScrollView"
+                     app:layout_constraintVertical_bias="0.03"
+                     app:layout_constraintVertical_chainStyle="packed" />
+             </LinearLayout>
+         </ScrollView>
+     </androidx.cardview.widget.CardView>
+
+     <TextView
+        android:id="@+id/groupdetails"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/buttonbackgroundright"
+        android:gravity="end|center"
+        android:paddingEnd="20dp"
+        android:text="Group Details"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addexpense" />
+
+    <TextView
+        android:id="@+id/addexpense"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonbackgroundleft"
+        android:gravity="start|center"
+        android:paddingStart="15dp"
+        android:text="Add Expense"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

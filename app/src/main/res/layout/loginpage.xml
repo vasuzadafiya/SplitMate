@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context=".loginpage">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+
+                        <!-- Email and Password Fields -->
+
+                        <TextView
+                            android:id="@+id/tvheadlogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Login"
+                            android:textColor="#1E371A"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtemail"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_email"
+                            android:drawablePadding="10dp"
+                            android:gravity="left|center"
+                            android:hint="@string/email_address"
+                            android:inputType="textEmailAddress"
+                            android:padding="10dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edtpassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_lock"
+                            android:drawablePadding="10dp"
+                            android:gravity="left|center"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:padding="10dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvheadreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="#00431414"
+                            android:fontFamily="@font/arimo"
+                            android:gravity="center"
+                            android:text="@string/register_account"
+                            android:textColor="#1E371A"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/edtregemail"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_email"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical|left"
+                            android:hint="Email Address"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="20dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/edtregpassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_lock"
+                            android:drawablePadding="10dp"
+                            android:gravity="left|center"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:paddingStart="20dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/confirmregpassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_lock"
+                            android:drawablePadding="10dp"
+                            android:gravity="left|center"
+                            android:hint="Confirm Password"
+                            android:inputType="textPassword"
+                            android:paddingStart="20dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+
+                        <!-- Email login trigger (available for phonelogin) -->
+
+                        <!-- Phone Login Trigger -->
+
+                        <TextView
+                            android:id="@+id/tvheadloginwithphone"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Login with Phone"
+                            android:visibility="gone"
+                            android:textColor="#1E371A"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+                        <!-- Phone Number Input and OTP Button (Initially Hidden) -->
+                        <EditText
+                            android:id="@+id/edtPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_phone"
+                            android:drawablePadding="10dp"
+                            android:gravity="left|center"
+                            android:hint="Phone Number"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:padding="10dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+
+                        <!-- OTP Input (Initially Hidden) -->
+                        <EditText
+                            android:id="@+id/edtOtp"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/custum_input"
+                            android:drawableStart="@drawable/ic_lock"
+                            android:drawablePadding="10dp"
+                            android:gravity="left|center"
+                            android:hint="Enter OTP"
+                            android:inputType="number"
+                            android:padding="10dp"
+                            android:textColor="#1A5319"
+                            android:textColorHint="#6F7065"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/progressbar"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:indeterminate="false"
+                            android:max="100"
+                            android:outlineAmbientShadowColor="@color/white"
+                            android:outlineSpotShadowColor="@color/black"
+                            android:progress="50"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/btnSendOtp"
+                            android:layout_width="150dp"
+                            android:layout_height="65dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="#22391D"
+                            android:gravity="center"
+                            android:text="Send OTP"
+                            android:textColor="#EEEADF"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/btnVerifyOtp"
+                            android:layout_width="200dp"
+                            android:layout_height="65dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="#22391D"
+                            android:gravity="center"
+                            android:text="Verify OTP"
+                            android:textColor="#EEEADF"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/btnregester"
+                            android:layout_width="170dp"
+                            android:layout_height="65dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="#22391D"
+                            android:gravity="center"
+                            android:text="Regester"
+                            android:textColor="#EEEADF"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <!-- Login Button -->
+                        <Button
+                            android:id="@+id/btnlogin"
+                            android:layout_width="150dp"
+                            android:layout_height="65dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="#22391D"
+                            android:gravity="center"
+                            android:text="Login"
+                            android:textColor="#EEEADF"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/tvphoneLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/phlogin"
+                            android:textColor="#1A5319"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                        <TextView
+                            android:id="@+id/tvlogintrigger"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/emlogin"
+                            android:textColor="#1A5319"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:visibility="gone" />
+                        <!-- Sign Up Text -->
+                        <TextView
+                            android:id="@+id/tvsignup"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/createac"
+                            android:textColor="#1A5319"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                </LinearLayout>
+</RelativeLayout>
