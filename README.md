@@ -10,15 +10,48 @@
 - **Firebase Authentication**: Users can securely log in using Firebase Authentication.
 - **Firestore Database**: All expenses and groups are stored in real-time using Firestore.
 
-## Screenshots
 
-| Personal Expenses | Group Overview | Group Expenses |
-|-------------------|----------------|----------------|
-| (Insert Screenshot) | (Insert Screenshot) | (Insert Screenshot) |
 
 ## Installation and Setup
 
-1. Clone the repository:
+   1. Clone the repository:
+   
+      ```bash
+      git clone https://github.com/vasuzadafiya/SplitMate.git
+      ```
+      
+   2. Open the project in Android Studio.
+   
+   3. Set up Firebase:
+       - Create a Firebase project.
+       - Enable Authentication and Firestore Database.
+       - Download the `google-services.json` file and place it in the `/app` directory.
+   
+   4. Run the app on an Android emulator or physical device.
 
-   ```bash
-   git clone https://github.com/your-username/splitmate.git
+## Database Structure
+
+- **Users (Collection)**:
+  - Fields: `email`, `PhoneNumber`, `uid`
+  - **PersonalExpenses (Subcollection)**:
+    - Fields: `amount`, `date`, `category`, `paymentMethod`
+  - **Groups (Subcollection)**:
+    - Fields: `groupname`, `createdAt`, `members`, `uid`
+    - **Expense (Subcollection)**:
+      - Fields: `amount`, `date`, `category`, `paidBy`
+
+## Future Inhancement
+
+- **Notifications**: Notify users of unsettled payments.
+- **Export Functionality**: Export expenses to PDF or Excel.
+- **Multi-Currency Support**: Handle currency conversion for group expenses.
+- **Dynamic calculation** : who will pays to whom how many amount calculation (in group expenses).
+
+## Acknowledgments
+
+I would like to thank my friends, family, faculty, and the open-source community for their guidance and support during the development of this project.
+
+
+| Project Documentation |
+|-------------------|
+| https://github.com/vasuzadafiya/SplitMate/blob/641b43fa6dc393d8373ed1aa4d081c8807345198/Documentation.pdf |
