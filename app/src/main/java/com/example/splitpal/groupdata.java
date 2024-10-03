@@ -161,8 +161,6 @@ private void fetchAndDisplayGroupNames() {
         Toast.makeText(getApplicationContext(), "User not authenticated.", Toast.LENGTH_SHORT).show();
     }
 }
-
-
     private void clickCreateGroup() {
         findViewById(R.id.CreateGroup).setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), createGroup.class);
