@@ -17,7 +17,7 @@
         android:layout_marginBottom="12dp"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:text="Group Details"
+        android:text="All Groups"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
