@@ -161,14 +161,13 @@ private void loadGroupExpenses(String groupId, TextView totalAmountTextView) {
                     totalAmount += Double.parseDouble(expense.getAmount());
                     count++;
                 }
-                String tem = "total count found : "+count;
 
-                Utils.showToast(this,tem);
 
                 calculateAndSplitExpenses(expenseList);
             }
         }
 
+        //for handle data not found image
         if (count == 0) {
             datanotfoundimg.setVisibility(View.VISIBLE);
             txtimgntfnd.setVisibility(View.VISIBLE);
