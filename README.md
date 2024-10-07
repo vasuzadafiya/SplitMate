@@ -9,6 +9,7 @@
 - **Expense Splitting**: Automatically splits group expenses among members and identifies who owes and who is owed.
 - **Firebase Authentication**: Users can securely log in using Firebase Authentication.
 - **Firestore Database**: All expenses and groups are stored in real-time using Firestore.
+- **Dynamic Calculation**: Automatically calculates who will pays how much amount to whom.
 
 
 
@@ -51,7 +52,4 @@
 
 I would like to thank my friends, family, faculty, and the open-source community for their guidance and support during the development of this project.
 
-
-| Project Documentation |
-|-------------------|
-| https://github.com/vasuzadafiya/SplitMate/blob/641b43fa6dc393d8373ed1aa4d081c8807345198/Documentation.pdf |
+i will add documentation very soon...
