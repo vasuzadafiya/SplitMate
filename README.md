@@ -46,7 +46,6 @@
 - **Notifications**: Notify users of unsettled payments.
 - **Export Functionality**: Export expenses to PDF or Excel.
 - **Multi-Currency Support**: Handle currency conversion for group expenses.
-- **Dynamic calculation** : who will pays to whom how many amount calculation (in group expenses).
 
 ## Acknowledgments
 
