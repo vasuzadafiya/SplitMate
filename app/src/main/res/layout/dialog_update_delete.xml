@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Update or Delete Expense"
-        android:textColor="#353C1D"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         android:fontFamily="@font/arimo" />

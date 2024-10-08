@@ -276,40 +276,63 @@ public class groupdetails extends AppCompatActivity {
     }
 
 
+    private void deleteGroup(String groupId) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Delete '" + groupName + "' Group?")
+                .setMessage("Are you sure you want to delete this group?")
+                .setPositiveButton("Yes, Delete this group", (dialog, which) -> {
 
-private void deleteGroup(String groupId) {
-    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-    dialogBuilder.setTitle("Delete '" + groupName + "' Group?")
-            .setMessage("Are you sure you want to delete this group?")
-            .setPositiveButton("Yes, Delete this group", (dialog, which) -> {
+                    String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
-                String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-                DocumentReference groupRef = FirebaseFirestore.getInstance()
-                        .collection("users")
-                        .document(userId)
-                        .collection("groups")
-                        .document(groupId);
-                String temp = groupName+" Deleted Successfully"  ;
-                groupRef.delete().addOnSuccessListener(aVoid -> {
-                    Utils.showToast(this,temp);
-                }).addOnFailureListener(e->{
-                    Utils.showToast(this,e.toString());
-                });
-                finish();
-            })
-            .setNegativeButton("No, I don't want", null)
-            .setIcon(R.drawable.applogo)
-            .setCancelable(true);
+                    // Reference to the group document
+                    DocumentReference groupRef = FirebaseFirestore.getInstance()
+                            .collection("users")
+                            .document(userId)
+                            .collection("groups")
+                            .document(groupId);
 
-    AlertDialog alertDialog = dialogBuilder.create();
+                    //   Delete all documents in the "expenses" subcollection
+                    groupRef.collection("expenses").get().addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot expenseDoc : task.getResult()) {
+                                // Delete each document in the "expenses" subcollection
+                                groupRef.collection("expenses").document(expenseDoc.getId()).delete()
+                                        .addOnSuccessListener(aVoid -> {
+                                            Log.d("Firebase", "Expense document successfully deleted!");
+                                        })
+                                        .addOnFailureListener(e -> {
+                                            Log.w("Firebase", "Error deleting expense document", e);
+                                        });
+                            }
 
-    // Set the custom background
-    if (alertDialog.getWindow() != null) {
-        alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.customheader);
+                            // Step 2: After deleting the subcollection, delete the group document
+                            groupRef.delete().addOnSuccessListener(aVoid -> {
+                                String temp = groupName + " Deleted Successfully";
+                                Utils.showToast(this, temp);
+                                finish();
+                            }).addOnFailureListener(e -> {
+                                Utils.showToast(this, e.toString());
+                            });
+
+                        } else {
+                            Utils.showToast(this, "Error getting expenses documents");
+                            Log.w("Firebase", "Error getting expenses documents", task.getException());
+                        }
+                    });
+                })
+                .setNegativeButton("No, I don't want", null)
+                .setIcon(R.drawable.applogo)
+                .setCancelable(true);
+
+        AlertDialog alertDialog = dialogBuilder.create();
+
+        // Set the custom background
+        if (alertDialog.getWindow() != null) {
+            alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.customheader);
+        }
+
+        alertDialog.show();
     }
-
-    alertDialog.show();
-}
 
 
 

@@ -5,40 +5,38 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/leaf2"
+    android:background="@drawable/groupbg"
     tools:context=".createGroup">
 
-    <!-- Header Text -->
 
-    <!-- ScrollView to hold the input fields -->
     <TextView
         android:id="@+id/head"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_margin="10dp"
         android:fontFamily="casual"
         android:gravity="center"
         android:text="Create Your Squad"
         android:textColor="@color/black"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_addmember"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239">
+        app:layout_constraintEnd_toEndOf="@+id/head"
+        app:layout_constraintStart_toStartOf="@+id/head"
+        app:layout_constraintTop_toBottomOf="@+id/head">
 
         <!-- LinearLayout to arrange elements vertically -->
         <LinearLayout
