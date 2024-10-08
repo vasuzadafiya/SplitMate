@@ -446,5 +446,4 @@ public class groupdetails extends AppCompatActivity {
 
         displayans.setAdapter(adapter);
     }
-    //something is missing for delete group
 }
