@@ -263,17 +263,36 @@ public class groupdetails extends AppCompatActivity {
         });
 
         buttonDelete.setOnClickListener(v -> {
-            expensesRef.document(expenseId).delete()
-                    .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(getApplicationContext(), "Expense deleted!", Toast.LENGTH_SHORT).show();
-                        loadGroupExpenses(groupId, totalAmountTextView); // Reload expenses
-                        alertDialog.dismiss();
+            androidx.appcompat.app.AlertDialog.Builder alertdelete = new androidx.appcompat.app.AlertDialog.Builder(this);
+            alertdelete.setTitle("Delete Expense")
+                    .setMessage("Are you sure you want to delete this expense?")
+                    .setPositiveButton("Yes, Delete", (dialog, which) -> {
+                        expensesRef.document(expenseId).delete()
+                                .addOnSuccessListener(aVoid -> {
+                                    Toast.makeText(getApplicationContext(), "Expense deleted!", Toast.LENGTH_SHORT).show();
+                                    loadGroupExpenses(groupId, totalAmountTextView); // Reload expenses
+                                    alertDialog.dismiss();
+                                })
+                                .addOnFailureListener(e -> {
+                                    Toast.makeText(getApplicationContext(), "Error deleting expense!", Toast.LENGTH_SHORT).show();
+                                });
+
                     })
-                    .addOnFailureListener(e -> {
-                        Toast.makeText(getApplicationContext(), "Error deleting expense!", Toast.LENGTH_SHORT).show();
-                    });
+                    .setNegativeButton("No, Cancel", null)
+                    .setIcon(R.drawable.applogo)
+                    .setCancelable(true);
+
+            androidx.appcompat.app.AlertDialog alert = alertdelete.create();
+
+            // Set the custom background
+            if (alert.getWindow() != null) {
+                alert.getWindow().setBackgroundDrawableResource(R.drawable.customheader);
+            }
+
+            alert.show();
         });
     }
+
 
 
     private void deleteGroup(String groupId) {
