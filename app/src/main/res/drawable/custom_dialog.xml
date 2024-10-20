@@ -13,9 +13,9 @@
     <!-- Enabled State -->
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
-            <solid android:color="#D2D8B5"/> <!--dialogue background -->
-            <corners android:radius="46dp"/>
-            <stroke android:color="#B1D4F3" android:width="4dp"/> <!-- border -->
+            <solid android:color="#2488E1"/> <!--dialogue background -->
+            <corners android:radius="10dp"/>
+            <stroke android:color="#000000" android:width="4dp"/> <!-- border -->
 
 <!--            <padding android:left="16dp" android:right="16dp" android:top="12dp" android:bottom="12dp"/>-->
         </shape>

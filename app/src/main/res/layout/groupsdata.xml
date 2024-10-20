@@ -9,7 +9,6 @@
     tools:context=".groupdata">
 
     <TextView
-        android:id="@+id/tvheadgroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"

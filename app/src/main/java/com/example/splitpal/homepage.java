@@ -21,13 +21,17 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -38,13 +42,14 @@ public class homepage extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser user;
-    ImageButton logout;
+    ImageButton logout,profile;
     TextView greeting,tvheadexp,txtimgntfnd;
     TableLayout tableLayout;
     FirebaseDatabase database;
     DatabaseReference expensesRef;
     ProgressBar progressBar;
     ImageView datanotfoundimg;
+
 
 
 
@@ -61,6 +66,7 @@ public class homepage extends AppCompatActivity {
         TextView totalAmountTextView = findViewById(R.id.totalAmountTextView);
         tvheadexp = findViewById(R.id.tvheadexp);
         progressBar = findViewById(R.id.progressbar);
+        profile=findViewById(R.id.profile);
         txtimgntfnd=findViewById(R.id.txtimgntfnd);
         datanotfoundimg = findViewById(R.id.datanotfoundimg);
 
@@ -81,11 +87,61 @@ public class homepage extends AppCompatActivity {
             startActivity(intent);
             finishAffinity();
         }
-
         clickgroupexpenses();
         clickLogout();
         clickAddExpense();
+        clickprofile();
     }
+
+    private void clickprofile() {
+        profile.setOnClickListener(v -> {
+            // Create an AlertDialog Builder
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(v.getContext());
+
+            // Inflate the custom layout
+            LayoutInflater inflater = getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.profile, null);
+
+            // Set the view for the dialog
+            dialogBuilder.setView(dialogView);
+            dialogBuilder.setCancelable(true);
+
+            TextView Tvemail = dialogView.findViewById(R.id.tvmail);
+            TextView Tvphone = dialogView.findViewById(R.id.tvphone);
+            TextView Tvuid = dialogView.findViewById(R.id.tvuid);
+
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String userid = user.getUid();
+
+            DocumentReference docRef = db.collection("users").document(userid);
+            docRef.get().addOnSuccessListener(documentSnapshot -> {
+                if (documentSnapshot.exists()) {
+                    String email = documentSnapshot.getString("Email");
+                    String phoneNumber = documentSnapshot.getString("Phone Number");
+                    String uid = documentSnapshot.getString("UID");
+
+                    // Check which one is null and set visibility accordingly
+                    if (email != null && !email.isEmpty()) {
+                        Tvemail.setText("Email: " + email);
+                        Tvphone.setVisibility(View.GONE);  // Hide phone number field
+                    } else if (phoneNumber != null && !phoneNumber.isEmpty()) {
+                        Tvphone.setText("Phone Number: " + phoneNumber);
+                        Tvemail.setVisibility(View.GONE);  // Hide email field
+                    }
+
+                    // Set UID
+                    Tvuid.setText("UID: " + uid);
+                }
+
+                // Create and show the dialog
+                AlertDialog alertDialog = dialogBuilder.create();
+                alertDialog.show();
+            });
+        });
+    }
+
 
     private void clickgroupexpenses() {
         findViewById(R.id.groupdetails).setOnClickListener(v -> {
@@ -95,7 +151,7 @@ public class homepage extends AppCompatActivity {
     }
 
     private void fetchExpensesData(TextView totalAmountTextView) {
-
+//        Validation that not require
         if (mAuth.getCurrentUser() == null) {
             finishAffinity();
             return;

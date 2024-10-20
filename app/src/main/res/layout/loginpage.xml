@@ -158,7 +158,7 @@
                             android:drawableStart="@drawable/ic_phone"
                             android:drawablePadding="10dp"
                             android:gravity="left|center"
-                            android:hint="Phone Number"
+                            android:hint="10 Digit Phone Number"
                             android:inputType="phone"
                             android:maxLength="10"
                             android:padding="10dp"

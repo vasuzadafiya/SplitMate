@@ -9,7 +9,6 @@
 
     <!-- Toolbar -->
     <include
-        android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +58,6 @@
              android:visibility="visible">
 
              <LinearLayout
-                 android:id="@+id/dispdata"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:orientation="vertical">

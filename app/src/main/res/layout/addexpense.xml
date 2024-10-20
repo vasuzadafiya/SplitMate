@@ -76,7 +76,7 @@
             android:drawableStart="@drawable/ic_category"
             android:drawablePadding="10dp"
             android:gravity="left|center"
-            android:hint="Category (Optional)"
+            android:hint="Description (Optional)"
             android:inputType="text"
             android:padding="10dp"
             android:textColorHint="#698474"
@@ -105,11 +105,11 @@
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:layout_marginTop="150dp"
-            android:backgroundTint="#FE654D"
+            android:backgroundTint="#022A0E"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="Add Expense"
-            android:textColor="#D2C58E"
+            android:textColor="#F3F0E7"
             android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>

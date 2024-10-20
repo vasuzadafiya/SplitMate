@@ -376,10 +376,10 @@ public class createGroup extends AppCompatActivity {
             }
             if(numberOfMembers >30){
                 editTextNumberOfMembers.setError("Number of members must be less than 30.");
-                editTextNumberOfMembers.requestFocus();
                 buttonAddMembers.setVisibility(View.VISIBLE);
                 editTextNumberOfMembers.setVisibility(View.VISIBLE);
                 buttonAddMembers.setVisibility(View.VISIBLE);
+                editTextNumberOfMembers.requestFocus();
                 return;
             }
         } catch (NumberFormatException e) {
